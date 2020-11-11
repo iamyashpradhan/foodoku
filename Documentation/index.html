@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Mezban - Food Delivery, Food Bloger & Restaurant HTML Template</title>
+	<link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="assets/scripts/jquery.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.custom.min.js"></script>
+
+    <script type="text/javascript" src="assets/scripts/shCore.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="assets/blueprint-css/shCoreDefault.css" />
+
+    <!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                // Cache selectors
+                var lastId,
+                    topMenu = $(".menu .alpha"),
+                    topMenuHeight = topMenu.outerHeight() + 15,
+                    // All list items
+                    menuItems = topMenu.find("a"),
+                    canUpdateURL = typeof history.pushState === "function" ? true : false,
+                    // Anchors corresponding to menu items
+                    scrollItems = menuItems.map(function () {
+                        var item = $($(this).attr("href"));
+                        if (item.length) {
+                            return item;
+                        }
+                    });
+
+                // Bind click handler to menu items
+                // so we can get a fancy scroll animation
+                menuItems.click(function (e) {
+                    var href = $(this).attr("href"),
+                        offsetTop = $(href).offset().top - topMenuHeight + 1;
+
+                    $('html, body').stop().animate({
+                        scrollTop: offsetTop
+                    }, 300);
+                    e.preventDefault();
+                });
+
+                // Bind to scroll
+                $(window).scroll(function () {
+                    // Get container scroll position
+                    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+                    // Get id of current scroll item
+                    var cur = scrollItems.map(function () {
+                        if ($(this).offset().top < fromTop)
+                            return this;
+                    });
+                    // Get the id of the current element
+                    cur = cur[cur.length - 1];
+                    var id = cur && cur.length ? cur[0].id : "";
+
+                    if (lastId !== id) {
+                        lastId = id;
+                        // Set/remove active class
+                        menuItems
+                            .parents('li').removeClass("active").end()
+                            .filter("[href=#" + id + "]").parent('li').addClass("active")
+                            .parents('li').addClass('active');
+
+                        if (canUpdateURL) {
+                            history.pushState(null, null, window.location.href.split('#').shift() + '#' + id);
+                        } else {
+                            var $section = $('#' + id);
+
+                            $section.attr('id', '');
+                            window.location.hash = '#' + id;
+                            $section.attr('id', id);
+                        }
+                    }
+                });
+
+                hashname = window.location.hash.replace('#', '');
+
+                $('.menu li').removeClass('active');
+                $('.menu li a[href=#' + hashname + ']')
+                    .parent('li').addClass('active')
+                    .parents('li').addClass('active');
+
+                elem = $('#' + hashname);
+
+                if (hashname.length > 1) {
+                    $('body, html').animate({
+                        scrollTop: $(elem).offset().top - topMenuHeight - 315
+                    }, 500, 'easeInOutCubic');
+                };
+            })
+        })(jQuery);
+    </script>
+</head>
+
+
+<body>
+    <div class="docs-header-bg">
+        <div class="docs-header">
+            <div class="logo">
+                <h1>Mezban </h1>
+            </div>
+
+            <h1 class="center">Documentation</h1>
+
+            <p>A Complete Guide for Real Mezban, Food Delivery, Food Bloger & Restaurant HTML Template</p>
+            <div>
+                <a href="https://www.foxcoders.com/docs/" target="_blank" class="header-button">Support</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!--      Section       -->
+        <!-- 		<h2 id="toc" class="alt">Table of Contents</h2> -->
+        <div class="menu">
+            <ol class="alpha">
+                <li><a href="#information">General Info</a>
+                <li><a href="#code-struc">Code Structure</a></li>
+                <li><a href="#how-to">How To?</a></li>
+                <li><a href="#credits">Credits</a>
+                </li>
+
+                <!--
+		<li><a href="#woocommerce">Snippets</a>
+			<ol>
+				<li><a href="#productSettings">Additional product settings</a></li>
+				<li><a href="#productCategorySettings">Products category settings</a></li>
+			</ol>
+		</li>
+-->
+            </ol>
+        </div>
+
+
+        <h3 id="information"><strong>General Informations</strong> - <a href="#information">Top</a></h3>
+
+		<p>Mezban is the best food delivery, food bloger & restaurant HTML template that is completely modern, unique and stunning website template. If you would like something a little different and attractive to the eye, Real Mezban is probably the best food solution website template you should look into first.</p>
+		<p>It has a stunning web design that will definitely appeal to a wide audience and get them intrigued.</p>
+
+        <p>There are three different home pages at your disposal and ready for you to utilize properly. The three alone are more than enough to find the right face for your food business. It would be the first choice for any food bloggers, restaurent and food chief. </p>
+		<p>It's a complete responsive and highly compatible to fit many browsers and even accessible with all mobile devices & it is SEO friendly too.</p>
+        
+		<p></p>
+
+        <hr>
+
+        <div class="subitems">
+            <h3 id="code-struc"><strong>HTML Structure</strong> - <a href="#information">Top</a></h3>
+				<img src="assets/images/html-structure.png" />
+            <hr>
+			
+			<h3><strong>CSS Files</strong> - <a href="#information">Top</a></h3>
+				<img src="assets/images/css-structure.png" />
+            <hr>
+
+			<h3><strong>CSS Indexing</strong> - <a href="#information">Top</a></h3>
+				<img src="assets/images/css-indexing.png" />
+            <hr>
+
+			<h3><strong>JavaScript Files</strong> - <a href="#information">Top</a></h3>
+				<img src="assets/images/javascript-structure.png" />
+            <hr>
+
+            <!--      Section       -->
+
+            <h3 id="how-to"><strong>How To?</strong> - <a href="#information">Top</a></h3>
+			
+			<p>All codes are well commented so that anyone can understand where to update. Here are some common question and answer. </p>
+
+            <h6 id="#move">How to change logo?</h6>
+            <p>You can replace the image logo from <strong>assets->images</strong> folder. You can easily change logo going to the html. For example, open index.html using a code editor, go to line no 120. That line should be like - </p>
+			<img src="assets/images/logo.png" />
+			<p>Now change image source file.</p>
+            <br /><br />
+
+            <h6>How to chagne footer copyright?</h6>
+            <p>To change footer copyright text, open your desired HTML file using code editor & find the text you want to replace. Then do that.</p>
+            <br /><br />
+
+            <h6>Want More Customization?</h6>
+            <p>This template is well commented so that you can understand what I code here. You can easily edit anyting you want. If you think this is not your job or you don't have much time to do that, then contact us. We are here to help you.</p>
+            <br /><br />
+
+            <!-- Credits -->
+            <h3 id="credits"><strong>Sources and Credits</strong> - <a href="#information">Top</a></h3>
+
+           <div class="narrow-p">
+
+        <p><strong>Free JavaScript:</strong></p>
+		<ul>
+			
+			<li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+			<li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+			<li><a href="https://wowjs.uk/" target="_blank">WOW JS</a></li>
+			<li><a href="https://swiperjs.com/" target="_blank">Swiper</a></li>
+			<li><a href="https://isotope.metafizzy.co" target="_blank">Isotope</a></li>
+			<li><a href="http://imakewebthings.com/waypoints/" target="_blank">Waypoints</a></li>
+			<li><a href="https://cornel.bopp-art.com/lightcase/" target="_blank">Lightcase</a></li>
+			<li><a href="https://github.com/bfintal/Counter-Up" target="_blank">Counter Up</a></li>
+        </ul>
+        <p><strong>Free fonts:</strong></p>
+
+        <ul>
+			<li><a href="https://fonts.google.com/specimen/Poppins" target="_blank">Poppins</a> (Text)</li>
+			<li><a href="https://icofont.com/" target="_blank">IcoFont</a> (Icons)</li>
+        </ul>
+
+        <hr class="space">
+		
+		    
+		
+		
+		
+        <hr class="space">
+
+        <p>All images have been used for demonstration purposes only and are not included in the template.</p>
+
+        <hr class="space">
+
+        <!-- Credits -->
+
+        <p><strong>Support:</strong> If you need any help using the file or need special customizing please feel free to contact me via my Themeforest profile. If you have a moment, please rate this item, I’ll appreciate it very much!….Thank you.
+		<p>I am always happy to help you. Please, contact me from my profile page.</p></p>
+
+        <hr class="space">
+
+        </div>
+
+
+    </div>
+    <!-- end div .container -->
+
+</body>
+
+</html>
