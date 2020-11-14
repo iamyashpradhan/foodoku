@@ -319,7 +319,7 @@ aside {
   color: #e9ba17; }
 
 .bg-shape-style {
-  background: url(../../assets/images/header/footer/bg-shape.png);
+  background: url(../../assets/images/header/footer/02.png);
   background-position: left top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1336,7 +1336,7 @@ aside {
     height: 40px;
     line-height: 40px;
     border-radius: 2px;
-    color: #fff;
+    color: white;
     font-size: 24px;
     margin-bottom: 4px;
     text-align: center; }
@@ -1394,8 +1394,8 @@ aside {
 .twitter {
   background: #55acee; }
 
-.linkedin {
-  background: #007bb5; }
+.instagram {
+  background: #3f729b; }
 
 .vimeo {
   background: #3b5998; }
@@ -1824,7 +1824,7 @@ aside {
         .header-section.header-3 .header-top .scocial-media a.youtube {
           color: #cd201f; }
         .header-section.header-3 .header-top .scocial-media a.instagram {
-          color: #e4405f; }
+          color: #3f729b; }
         .header-section.header-3 .header-top .scocial-media a.behance {
           color: #1769ff; }
   .header-section.header-3 .header-bottom {
@@ -2108,7 +2108,7 @@ aside {
           .page-header .page-title .breadcrumb li a:hover {
             color: #fb524f; }
   .page-header.style-2 {
-    background: url(../../assets/images/page-header/bg.jpg) no-repeat;
+    background: url(../../assets/images/page-header/bg.png) no-repeat;
     background-position: bottom center;
     background-size: cover; }
     .page-header.style-2 .page-title h3 {
@@ -4085,14 +4085,14 @@ aside {
   padding: 60px 30px 0; }
   @media (min-width: 1200px) {
     .contact-information .section-wrapper {
-      margin-bottom: -40px;
+      margin-bottom: 40px;
       z-index: 1; } }
   .contact-information .section-wrapper .col-12:first-child {
     margin-bottom: 40px; }
     @media (min-width: 992px) {
       .contact-information .section-wrapper .col-12:first-child {
         margin-bottom: 0px;
-        background: url(../../assets/images/contac/bg.png) no-repeat;
+        /* background: url(../../assets/images/contac/bg.png) no-repeat; */
         background-position: bottom left; } }
   .contact-information .section-wrapper h5 {
     margin-bottom: 35px;
@@ -5308,6 +5308,8 @@ p.comment-form-cookies-consent {
         color: #007bb5; }
       .footer .footer-top .footer-area .scocial-media a.vimeo {
         color: #3b5998; }
+        .footer .footer-top .footer-area .scocial-media a.instagram {
+          color: #e44774; }
     .footer .footer-top .footer-area .footer-menu ul {
       justify-content: center; }
       .footer .footer-top .footer-area .footer-menu ul li a {
